@@ -12,9 +12,15 @@
 */
 Route::get('/login','SessionsController@create');
 Route::get('/logout','SessionsController@destroy');
-Route::get('/', function()
+
+// temporary profile page for logged in user
+Route::get('/profile', function(){
+	return "Welcome ". Auth::user()->email;
+})->before('auth');
+
+Route::get('/',['as'=> 'home', function()
 {
 	return View::make('hello');
-});
+}]);
 
-Route::resource('sessions','SessionsController');
+Route::resource('sessions','SessionsController',['only'=> array('create','store','destroy')]);
