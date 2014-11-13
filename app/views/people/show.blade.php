@@ -1,0 +1,1 @@
+/media/dbc/Data/Projects/PhpProjects/LaravelApps/hospital/resources/views/people/show.blade.php

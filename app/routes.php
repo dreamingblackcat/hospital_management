@@ -24,3 +24,5 @@ Route::get('/',['as'=> 'home', function()
 }]);
 
 Route::resource('sessions','SessionsController',['only'=> array('create','store','destroy')]);
+
+Route::resource('people', 'PeopleController');
