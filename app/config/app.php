@@ -120,8 +120,9 @@ return array(
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-		'Illuminate\Workbench\WorkbenchServiceProvider'//,
-		// 'Way\Generators\GeneratorsServiceProvider'
+		'Illuminate\Workbench\WorkbenchServiceProvider',
+		'Cornford\Bootstrapper\BootstrapServiceProvider',
+		'Way\Generators\GeneratorsServiceProvider'
 
 	),
 
@@ -189,6 +190,7 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+		'Bootstrap'         => 'Cornford\Bootstrapper\Facades\Bootstrap'
 
 	),
 
