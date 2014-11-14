@@ -121,10 +121,15 @@ a {
 .sidebar {
   background-color: #2a3036;
   border-right: 1px solid #ccc;
-  bottom: 0;
-  position: absolute;
-  top: 0;
-  width: 189px;
+  top: 0; 
+  width: inherit;
+  min-width: 189px;
+  max-width: 189px;
+  float: left;
+  height:100%;
+  position:relative;
+  overflow-y:auto;
+  overflow-x:hidden;
 }
 
 .nav-list > li > a > [class*="icon-"]:first-child {
