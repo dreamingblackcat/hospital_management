@@ -15,6 +15,9 @@
 	</div>
 	<div class="container panel panel-default">
 		<div class="panel-body">
+				@if(Session::has('flash_message'))
+				<div class="alert alert-warning">{{Session::get('flash_message')}}</div>
+				@endif
 				@yield('content')	
 		</div>
 	</div>

@@ -31,7 +31,7 @@ class SessionsController extends \BaseController {
 			return Redirect::intended('/')->with('flash_message', "You have been logged in!");
 		}
 
-		dd("Problem");
+		return Redirect::back()->with('flash_message',"Invalid Credentials");
 	}
 
 

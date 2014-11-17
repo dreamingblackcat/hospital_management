@@ -1,4 +1,6 @@
 <?php
+use Awitd\Exceptions\ValidationException;
+use Awitd\Services\Validations\PersonValidator as Validator;
 
 class PeopleController extends \BaseController {
 
@@ -7,6 +9,12 @@ class PeopleController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+	public function __construct(Validator $validator)
+    {
+        $this->beforeFilter('auth');
+        $this->_validator = $validator;
+    }
+
 	public function index()
 	{
 		$people = Person::all();
@@ -31,16 +39,17 @@ class PeopleController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Person::$rules);
+		$inputs = Input::all();
+        try{ 
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+        	$validate_data = $this->_validator->validate($inputs);
+			Person::create($inputs);
 
-		Person::create($data);
+			return Redirect::route('people.index')->withMessage( 'Data passed validation checks');
+        } catch (ValidationException $e){
 
-		return Redirect::route('people.index');
+        	return Redirect::route('people.create')->withInput()->withErrors($e->get_errors());
+        }
 	}
 
 	/**
