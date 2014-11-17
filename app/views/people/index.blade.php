@@ -33,6 +33,7 @@
 			<th>NRC Number</th>
 			<th>Contact Email</th>
 			<th>Phone Number</th>
+			<th>Father's Name</th>
 			<th colspan="3">Actions</th>
 		</tr>
 	</thead>
@@ -46,6 +47,7 @@
     	<td>{{ $person->nrc_number }}</td>
     	<td>{{ $person->contact_email }}</td>
     	<td>{{ $person->phone_number }}</td>
+    	<td>{{ $person->father_name }}</td>
     	<td>{{ link_to_route('people.edit', "Edit", $parameters = array('id'=>$person->id), $attributes = array('class' => 'btn btn-default')) }}</td>
     	<td>{{ link_to_route('people.show', "View", $parameters = array('id'=>$person->id), $attributes = array('class' => 'btn btn-default')) }}</td>
     	<td>{{ link_to_route('people.destroy', "Delete", $parameters = array('id'=>$person->id), $attributes = array('class' => 'btn btn-default')) }}</td>
