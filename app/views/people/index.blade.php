@@ -46,7 +46,10 @@
     	<td>{{ $person->phone_number }}</td>
     	<td>{{ link_to_route('people.edit', "Edit", $parameters = array('id'=>$person->id), $attributes = array('class' => 'btn btn-default')) }}</td>
     	<td>{{ link_to_route('people.show', "View", $parameters = array('id'=>$person->id), $attributes = array('class' => 'btn btn-default')) }}</td>
-    	<td>{{ link_to_route('people.destroy', "Delete", $parameters = array('id'=>$person->id), $attributes = array('class' => 'btn btn-default')) }}</td>
+    	<td>
+			{{Form::open(array('method' => 'delete', 'route' => ['people.destroy',$person->id]))}}
+    			{{ Form::submit('Delete',array('class' => 'btn btn-default')) }}
+    		{{ Form::close() }}</td>
     </tr>
 	@endforeach
 </table>
