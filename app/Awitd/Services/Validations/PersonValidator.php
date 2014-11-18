@@ -8,7 +8,7 @@ class PersonValidator extends Validator {
      * @var array Validation rules for the test form, they can contain in-built Laravel rules or our custom rules
      */
     public $rules = array(
-        'name' => array( 'required', 'alpha_dash', 'max:200' ),
+        'name' => array( 'required', 'max:200' ),
         'nationality' => array( 'required', 'max:200' ),
         'ethnic_group' =>array( 'required', 'max:200' ),
         'date_of_birth' => array( 'required', 'date'),
