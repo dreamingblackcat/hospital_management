@@ -87,17 +87,19 @@ class PeopleController extends \BaseController {
 	public function update($id)
 	{
 		$person = Person::findOrFail($id);
+		$inputs = Input::all();
 
-		$validator = Validator::make($data = Input::all(), Person::$rules);
+		try{ 
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+        	$validate_data = $this->_validator->validate($inputs);
+			$person->update($inputs);
 
-		$person->update($data);
+			return Redirect::route('people.index')->withMessage( 'Data passed validation checks');
 
-		return Redirect::route('people.index');
+        } catch (ValidationException $e){
+
+        	return Redirect::route('people.create')->withInput()->withErrors($e->get_errors());
+        }
 	}
 
 	/**
