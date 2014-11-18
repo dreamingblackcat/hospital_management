@@ -16,7 +16,7 @@
 		@foreach($expertise_areas as $index => $expertise_area)
 
 			<p>
-				{{ $index+1 }}. {{ $expertise_area }}
+				{{ $index+1 }}. {{ $expertise_area->name }}
 			</p>
 		@endforeach
 	</div>
