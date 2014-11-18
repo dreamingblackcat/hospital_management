@@ -12,10 +12,10 @@ class Person extends \Eloquent {
 
 	protected $dates = array('date_of_birth');
 
-	public function setDateOfBirthAttribute($value)
-    {
-        $this->attributes['date_of_birth'] = strtolower($value);
-    }
+	// public function setDateOfBirthAttribute($value)
+ //    {
+ //        $this->attributes['date_of_birth'] = new Carbon($value);
+ //    }
 
 	// Don't forget to fill this array
 	protected $fillable = ['name','nationality','ethnic_group', 'date_of_birth','nrc_number','contact_email','phone_number','father_name'];
