@@ -24,7 +24,7 @@
     @else
     	<br>
 	@endif
-	{{ Form::model(new Person, array('route' => array('people.store'),'class'=>"form-horizontal"))}}
+	{{ Form::model($person = new Person, array('route' => array('people.store'),'class'=>"form-horizontal"))}}
 
 		@include('people._form_fields',['button_text' => 'Save'])
 
