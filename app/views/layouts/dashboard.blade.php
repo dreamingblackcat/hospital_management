@@ -31,9 +31,9 @@
 						<i class="fa fa-group fa-2x"></i>
 					</div>
 					<div class="col-sm-6">
-						<a href="{{ URL::route('people.index')}}">
+						<a href="{{ URL::route('ExpertiseAreas.index')}}">
 							
-							<span class="menu-text"> People </span>
+							<span class="menu-text"> ExpertiseAreas </span>
 						</a>
 					</div>
 				</li>
