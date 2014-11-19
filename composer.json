@@ -21,9 +21,10 @@
 			"app/database/seeds",
 			"app/tests/TestCase.php"
 		],
+		"files": ["app/helpers.php"],
 		"psr-4": {
-        "Awitd\\": "app/Awitd"
-    }
+        	"Awitd\\": "app/Awitd"
+		}
 	},
 	"scripts": {
 		"post-install-cmd": [

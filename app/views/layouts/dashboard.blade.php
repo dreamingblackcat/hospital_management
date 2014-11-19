@@ -14,7 +14,7 @@
 	<div class="main-container container-fluid">
 		<div class="sidebar cm-sidebar" id="sidebar">
 			<ul class="nav nav-list">
-				<li class="active row">
+				<li class="{{set_active('people')}} row">
 					<div class="col-sm-6 alc">
 						<i class="fa fa-dashboard fa-2x"></i>
 					</div>
@@ -26,7 +26,7 @@
 					</div>
 				</li>
 
-				<li class="row">
+				<li class="{{set_active('ExpertiseAreas')}} row">
 					<div class="col-sm-6 alc">
 						<i class="fa fa-group fa-2x"></i>
 					</div>
@@ -37,25 +37,25 @@
 						</a>
 					</div>
 				</li>
-				<li class="row">
+				<li class="{{set_active('doctors')}} row">
 					<div class="col-sm-6 alc">
 						<i class="fa fa-eye fa-2x"></i>
 					</div>
 					<div class="col-sm-6">
 						<a href="{{ URL::route('people.index')}}">
 							
-							<span class="menu-text"> People </span>
+							<span class="menu-text"> Doctors </span>
 						</a>
 					</div>
 				</li>
-				<li class="row">
+				<li class="{{set_active('patients')}} row">
 					<div class="col-sm-6 alc">
 						<i class="fa fa-user fa-2x"></i>
 					</div>
 					<div class="col-sm-6">
 						<a href="{{ URL::route('people.index')}}">
 							
-							<span class="menu-text"> People </span>
+							<span class="menu-text"> Patients </span>
 						</a>
 					</div>
 				</li>
