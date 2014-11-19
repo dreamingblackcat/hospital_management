@@ -1,5 +1,5 @@
 <?php
 
 function set_active($path, $active= "active"){
-	return Request::is($path) ? $active : "";
+	return in_array($path, Request::segments()) ? $active : "";
 }
