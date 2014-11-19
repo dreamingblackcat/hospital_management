@@ -12,5 +12,10 @@
 @stop
 
 @section('content')
+	{{ Form::model($expertise_area = new ExpertiseArea, array('route' => array('ExpertiseAreas.store'),'class'=>"form-horizontal"))}}
+
+		@include('ExpertiseAreas._form_fields',['button_text' => 'Save'])
+
+	{{Form::close()}}
 
 @stop

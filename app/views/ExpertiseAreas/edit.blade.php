@@ -12,5 +12,9 @@
 @stop
 
 @section('content')
+	{{ Form::model($expertise_area, array('route' => array('ExpertiseAreas.update','id' => $expertise_area->id),'method'=> 'put','class'=>"form-horizontal"))}}
 
+		@include('ExpertiseAreas._form_fields',['button_text' => 'Update'])
+
+	{{Form::close()}}
 @stop

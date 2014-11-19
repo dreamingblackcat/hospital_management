@@ -18,6 +18,15 @@
 			<p>
 				{{ $index+1 }}. {{ $expertise_area->name }}
 			</p>
+			<p>
+		    	<div class="col-xs-4">{{ link_to_route('ExpertiseAreas.edit', "Edit", $parameters = array('id'=>$expertise_area->id), $attributes = array('class' => 'btn btn-default')) }}</div>
+		    	<div class="col-xs-4">{{ link_to_route('ExpertiseAreas.show', "View", $parameters = array('id'=>$expertise_area->id), $attributes = array('class' => 'btn btn-default')) }}</div>
+		    	<div class="col-xs-4">
+					{{Form::open(array('method' => 'delete', 'route' => ['ExpertiseAreas.destroy',$expertise_area->id]))}}
+		    			{{ Form::submit('Delete',array('class' => 'btn btn-default')) }}
+		    		{{ Form::close() }}
+		    	</div>
+			</p>
 		@endforeach
 	</div>
 @stop

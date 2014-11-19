@@ -12,5 +12,7 @@
 @stop
 
 @section('content')
-
+	<h4 class="alc">
+		{{ $expertise_area->name }}
+	</h4>
 @stop
