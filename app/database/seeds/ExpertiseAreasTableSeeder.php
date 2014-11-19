@@ -8,6 +8,7 @@ class ExpertiseAreasTableSeeder extends Seeder {
 
 	public function run()
 	{
+		DB::table('ExpertiseAreas')->delete();
 		$faker = Faker::create();
 		$faker->addProvider(new JapanGuy($faker));
 		

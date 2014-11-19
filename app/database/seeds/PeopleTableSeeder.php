@@ -7,6 +7,7 @@ class PeopleTableSeeder extends Seeder {
 
 	public function run()
 	{
+		DB::table('people')->delete();
 		$faker = Faker::create();
 
 		foreach(range(1, 10) as $index)
