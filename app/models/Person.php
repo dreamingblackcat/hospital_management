@@ -18,6 +18,10 @@ class Person extends \Eloquent {
  //    }
 
 	// Don't forget to fill this array
-	protected $fillable = ['name','nationality','ethnic_group', 'date_of_birth','nrc_number','contact_email','phone_number','father_name'];
-
+	protected $fillable = ['name','nationality','ethnic_group', 'date_of_birth','nrc_number','contact_email','phone_number','father_name','profileable_type','profileable_id'];
+	
+	 public function profileable()
+    {
+        return $this->morphTo();
+    }
 }
