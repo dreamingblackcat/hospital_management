@@ -28,3 +28,4 @@ Route::resource('sessions','SessionsController',['only'=> array('create','store'
 Route::resource('people', 'PeopleController');
 
 Route::resource('ExpertiseAreas', 'ExpertiseAreasController');
+Route::resource('doctors', 'DoctorsController');

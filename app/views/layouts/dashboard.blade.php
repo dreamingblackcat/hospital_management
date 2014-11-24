@@ -42,7 +42,7 @@
 						<i class="fa fa-eye fa-2x"></i>
 					</div>
 					<div class="col-sm-6">
-						<a href="{{ URL::route('people.index')}}">
+						<a href="{{ URL::route('doctors.index')}}">
 							
 							<span class="menu-text"> Doctors </span>
 						</a>
