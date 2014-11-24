@@ -6,13 +6,13 @@
     <p>This is appended to the master sidebar.</p>
 @stop -->
 @section('heading')
-	<h3>People</h3>
+	<h3>Doctors</h3>
 @stop
 
 @section('sub_heading')
 	<div class="row">
 		<div class="col-sm-4 sub-heading">
-			People List
+			Doctor List
 		</div>
 		<div class="col-sm-offset-4 col-sm-4">
 			<input type="text" class="form-control" placeholder="Text input">
@@ -29,23 +29,25 @@
 			<th>Name</th>
 			<th>Expertise Area</th>
 			<th>Education Info</th>
-			<th>Experience</th>
+			<th>Years of Experience</th>
 			<th colspan="3">Actions</th>
 		</tr>
 	</thead>
-    @foreach ($people as $index => $doctor)
+    @foreach ($doctors as $index => $doctor)
     <tr>
     	<td>{{ $index+1 }}</td>
-    	<td>{{ $doctor->name }}</td>
-    	<td>{{ $doctor->nationality }}</td>
-    	<td>{{ $doctor->ethnic_group }}</td>
-    	<td>{{ $doctor->date_of_birth->format('Y-m-d') }}</td>
-    	<td>{{ $doctor->nrc_number }}</td>
-    	<td>{{ $doctor->phone_number }}</td>
-    	<td>{{ link_to_route('people.edit', "Edit", $parameters = array('id'=>$doctor->id), $attributes = array('class' => 'btn btn-default')) }}</td>
-    	<td>{{ link_to_route('people.show', "View", $parameters = array('id'=>$doctor->id), $attributes = array('class' => 'btn btn-default')) }}</td>
+    	<td>{{ $doctor->person->name}}</td>
     	<td>
-			{{Form::open(array('method' => 'delete', 'route' => ['people.destroy',$doctor->id]))}}
+    		@foreach ($doctor->expertise_areas()->get() as $expertise_area)
+    			{{ $expertise_area->name . " "}}
+    		@endforeach
+    	</td>
+    	<td>{{ $doctor->education_info }}</td>
+     	<td>{{ $doctor->work_experience() }}</td> 
+    	<td>{{ link_to_route('doctors.edit', "Edit", $parameters = array('id'=>$doctor->id), $attributes = array('class' => 'btn btn-default')) }}</td>
+    	<td>{{ link_to_route('doctors.show', "View", $parameters = array('id'=>$doctor->id), $attributes = array('class' => 'btn btn-default')) }}</td>
+    	<td>
+			{{Form::open(array('method' => 'delete', 'route' => ['doctors.destroy',$doctor->id]))}}
     			{{ Form::submit('Delete',array('class' => 'btn btn-default')) }}
     		{{ Form::close() }}</td>
     </tr>

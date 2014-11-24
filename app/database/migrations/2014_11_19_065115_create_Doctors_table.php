@@ -17,10 +17,6 @@ class CreateDoctorsTable extends Migration {
 			$table->increments('id');
 			$table->text('education_info');
 			$table->date('official_started_working_date');
-			$table->unsignedInteger('expertise_area_id');
-			// $table->unsignedInteger('person_id');
-			$table->foreign('expertise_area_id')->references('id')->on('ExpertiseAreas');
-			// $table->foreign('person_id')->references('id')->on('people');
 			$table->timestamps();
 		});
 	}

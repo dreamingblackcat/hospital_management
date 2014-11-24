@@ -10,4 +10,9 @@ class ExpertiseArea extends \Eloquent {
 	// Don't forget to fill this array
 	protected $fillable = ['name'];
 
+	public function doctors()
+    {
+        return $this->belongsToMany('Doctor','ExpertiseArea_doctor','doctor_id','ExpertiseArea_id')->withTimestamps();;
+    }
+
 }
