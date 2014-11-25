@@ -21,6 +21,24 @@
 @stop
 
 @section('content')
+	<ul class="nav nav-tabs" id="doctorTab">
+	  <li class="active"><a href="#home">Personal Information</a></li>
+	  <li><a href="#profile">Patients</a></li>
+	  <li><a href="#messages">Schedule</a></li>
+	</ul>
 
+	<div class="tab-content">
+	  <div class="tab-pane active" id="home">
+	  	<p>{{ $doctor->person->name }}</p>
+	  	<p>{{ $doctor->person->nationality }}</p>
+	  	<p>{{ $doctor->person->ethnic_group }}</p>
+	  	<p>{{ $doctor->person->date_of_birth->format('Y-m-d') }}</p>
+	  	<p>{{ $doctor->person->nrc_number }}</p>
+	  	<p>{{ $doctor->person->phone_number }}</p>
+	  </div>
+	  <div class="tab-pane" id="profile">Coming Soon</div>
+	  <div class="tab-pane" id="messages">Coming Soon</div>
+	  <div class="tab-pane" id="settings">Coming Soon</div>
+	</div
 
 @stop

@@ -84,6 +84,7 @@
 		</div>
 	</div>
 	{{ Bootstrap::js('local', ['type' => 'text/javascript']); }}
+	{{ HTML::script('assets/js/hospital.js', ['type' => 'text/javascript']); }}
 </body>
 </html>
 

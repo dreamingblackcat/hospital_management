@@ -59,3 +59,12 @@ body{
 .active a{
 	color: #50D353;
 }
+/*bootstrap nav-tabs override*/
+.nav-tabs{
+	background-color: #2B3036!important;
+	color: #FFF!important;
+	border-color: #DDD!important;
+}
+.tab-pane p{
+	margin-left: 20px;
+}
