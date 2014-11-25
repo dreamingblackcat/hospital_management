@@ -1,84 +1,13 @@
 {{ Form::token()}}
-<div class="form-group">
-	{{ Form::label('name', 'name:',array('class' => "col-sm-4" )) }}
 
-	<div class="col-sm-5">
-		{{ Form::text('name',Input::old('name',$person->name), array('class' => "form-control" )) }}
-		@if($errors->has('name'))
-			<p class="alert alert-warning">{{ $errors->first('name') }}</p> 
-		@endif
-	</div>
-</div>
-<div class="form-group">
-	{{ Form::label('nationality', 'nationality:',array('class' => "col-sm-4" )) }}
-
-	<div class="col-sm-5">
-		{{ Form::text('nationality',Input::old('nationality',$person->nationality), array('class' => "form-control" )) }}
-		@if($errors->has('nationality'))
-			<p class="alert alert-warning">{{ $errors->first('nationality') }}</p> 
-		@endif
-	</div>
-</div>
-<div class="form-group">
-	{{ Form::label('ethnic_group', 'ethnic_group:',array('class' => "col-sm-4" )) }}
-
-	<div class="col-sm-5">
-		{{ Form::text('ethnic_group',Input::old('ethnic_group',$person->ethnic_group), array('class' => "form-control" )) }}
-		@if($errors->has('ethnic_group'))
-			<p class="alert alert-warning">{{ $errors->first('ethnic_group') }}</p> 
-		@endif
-	</div>
-</div>
-<div class="form-group">
-	{{ Form::label('date_of_birth', 'date_of_birth:',array('class' => "col-sm-4" )) }}
-
-	<div class="col-sm-5">
-		{{ Form::text('date_of_birth',Input::old('date_of_birth'), array('class' => "form-control" )) }}
-		@if($errors->has('date_of_birth'))
-			<p class="alert alert-warning">{{ $errors->first('date_of_birth') }}</p> 
-		@endif
-	</div>
-</div>
-<div class="form-group">
-	{{ Form::label('nrc_number', 'nrc_number:',array('class' => "col-sm-4" )) }}
-
-	<div class="col-sm-5">
-		{{ Form::text('nrc_number',Input::old('nrc_number'), array('class' => "form-control" )) }}
-		@if($errors->has('nrc_number'))
-			<p class="alert alert-warning">{{ $errors->first('nrc_number') }}</p> 
-		@endif
-	</div>
-</div>
-<div class="form-group">
-	{{ Form::label('contact_email', 'contact_email:',array('class' => "col-sm-4" )) }}
-
-	<div class="col-sm-5">
-		{{ Form::text('contact_email',Input::old('contact_email'), array('class' => "form-control" )) }}
-		@if($errors->has('contact_email'))
-			<p class="alert alert-warning">{{ $errors->first('contact_email') }}</p> 
-		@endif
-	</div>
-</div>
-<div class="form-group">
-	{{ Form::label('phone_number', 'phone_number:',array('class' => "col-sm-4" )) }}
-
-	<div class="col-sm-5">
-		{{ Form::text('phone_number',Input::old('phone_number'), array('class' => "form-control" )) }}
-		@if($errors->has('phone_number'))
-			<p class="alert alert-warning">{{ $errors->first('phone_number') }}</p> 
-		@endif
-	</div>
-</div>
-<div class="form-group">
-	{{ Form::label('father_name', 'father_name:',array('class' => "col-sm-4" )) }}
-
-	<div class="col-sm-5">
-		{{ Form::text('father_name',Input::old('father_name'), array('class' => "form-control" )) }}
-		@if($errors->has('father_name'))
-			<p class="alert alert-warning">{{ $errors->first('father_name') }}</p> 
-		@endif
-	</div>
-</div>
+{{Form::bsTextFieldWithLabel('name',$person,$errors,Input::old('name',$person->name))}}
+{{Form::bsTextFieldWithLabel('nationality',$person,$errors,Input::old('nationality',$person->nationality))}}
+{{Form::bsTextFieldWithLabel('ethnic_group',$person,$errors,Input::old('ethnic_group',$person->ethnic_group))}}
+{{Form::bsTextFieldWithLabel('date_of_birth',$person,$errors,Input::old('date_of_birth',$person->date_of_birth))}}
+{{Form::bsTextFieldWithLabel('nrc_number',$person,$errors,Input::old('nrc_number',$person->nrc_number))}}
+{{Form::bsTextFieldWithLabel('contact_email',$person,$errors,Input::old('contact_email',$person->contact_email))}}
+{{Form::bsTextFieldWithLabel('phone_number',$person,$errors,Input::old('phone_number',$person->phone_number))}}
+{{Form::bsTextFieldWithLabel('father_name',$person,$errors,Input::old('father_name',$person->father_name))}}
 <div class="form-group alr">
 	{{ Form::submit($button_text,['class'=>"btn btn-default"])}}
 </div>
