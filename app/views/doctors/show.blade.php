@@ -1,10 +1,4 @@
 @extends('layouts.dashboard')
-<!-- 
-@section('sidebar')
-    @parent
-
-    <p>This is appended to the master sidebar.</p>
-@stop -->
 @section('heading')
 	<h3>Doctor Information</h3>
 @stop
@@ -21,6 +15,13 @@
 @stop
 
 @section('content')
+	<div class="expertise_areas_list" style="margin-bottom: 10px;">
+		@foreach($doctor->expertise_areas()->get() as $area)
+			<span class="label label-primary">{{$area->name }} </span> &nbsp
+		@endforeach
+		<br>
+	</div>
+	
 	<ul class="nav nav-tabs" id="doctorTab">
 	  <li class="active"><a href="#home">Personal Information</a></li>
 	  <li><a href="#profile">Patients</a></li>
