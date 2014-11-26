@@ -12,7 +12,7 @@ class ExpertiseArea extends \Eloquent {
 
 	public function doctors()
     {
-        return $this->belongsToMany('Doctor','ExpertiseArea_doctor','doctor_id','ExpertiseArea_id')->withTimestamps();;
+        return $this->belongsToMany('Doctor','ExpertiseArea_doctor','ExpertiseArea_id','doctor_id')->withTimestamps();;
     }
 
 }

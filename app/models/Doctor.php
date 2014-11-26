@@ -7,6 +7,8 @@ class Doctor extends \Eloquent {
 		// 'title' => 'required'
 	];
 
+	protected $dates = array('official_started_working_date');
+
 	// Don't forget to fill this array
 	protected $fillable = ['education_info','official_started_working_date'];
 	// public function person()
@@ -20,11 +22,14 @@ class Doctor extends \Eloquent {
 
 	   public function expertise_areas()
     {
-        return $this->belongsToMany('ExpertiseArea','ExpertiseArea_doctor', 'ExpertiseArea_id', 'doctor_id')->withTimestamps();;
+        return $this->belongsToMany('ExpertiseArea','ExpertiseArea_doctor', 'doctor_id','ExpertiseArea_id')->withTimestamps();;
     }
 
     public function work_experience(){
     	return Carbon::parse($this->official_started_working_date)->age;
+    }
+     public function setOfficialStartedWorkingDateAttribute($date){
+    	$this->attributes['official_started_working_date'] = Carbon::parse($date);
     }
 }
 

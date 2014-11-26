@@ -24,4 +24,8 @@ class Person extends \Eloquent {
     {
         return $this->morphTo();
     }
+
+    public function setDateOfBirthAttribute($dob){
+    	$this->attributes['date_of_birth'] = Carbon::parse($dob);
+    }
 }
