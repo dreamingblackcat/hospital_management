@@ -2,7 +2,7 @@
 
 @section('content')
 
-{{Form::open(array('route' =>'sessions.store','class' => 'form-horizontal'))}}
+{{Form::open(array('route' =>'sessions.store','class' => 'form-horizontal cm-log-in-form'))}}
 	<div class="form-group">
 		{{ Form::label('email', 'Email:',array('class' => "col-sm-4 control-label" )) }}
 	

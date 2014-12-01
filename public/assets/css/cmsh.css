@@ -68,3 +68,13 @@ body{
 .tab-pane p{
 	margin-left: 20px;
 }
+
+.cm-search-form{
+  margin: 0px;
+}
+.cm-search-button{
+	color: #000!important;
+}
+.cm-search-button:hover {
+	color: #FFF!important;
+}
