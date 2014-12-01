@@ -15,7 +15,16 @@
 			Doctor List
 		</div>
 		<div class="col-sm-offset-4 col-sm-4">
-			<input type="text" class="form-control" placeholder="Text input">
+			<div class="row">
+				<div class="col-sm-9">
+					<input type="text" class="form-control" placeholder="Text input">
+
+				</div>
+				<div class="col-sm-3">
+					{{ link_to_route('doctors.create', "New",array(), $attributes = array('class' => 'btn btn-default')) }}
+				</div>
+			</div>
+			
 		</div>
 	</div>
 @stop
